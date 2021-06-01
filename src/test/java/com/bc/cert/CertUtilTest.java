@@ -2,16 +2,9 @@ package com.bc.cert;
 
 import org.apache.commons.io.FileUtils;
 import org.bouncycastle.asn1.DERIA5String;
-import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x509.*;
-import org.bouncycastle.asn1.x509.Certificate;
-import org.bouncycastle.asn1.x509.Extension;
-import org.bouncycastle.cert.X509CertificateHolder;
-import org.bouncycastle.cert.X509ExtensionUtils;
-import org.bouncycastle.util.encoders.Hex;
 import org.junit.Before;
 import org.junit.Test;
-import sun.security.x509.X509CRLImpl;
 
 import javax.naming.NamingException;
 import javax.security.cert.CertificateException;
@@ -21,10 +14,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Security;
-import java.security.cert.*;
+import java.security.cert.CRLException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509CRL;
+import java.security.cert.X509CRLEntry;
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 public class CertUtilTest {
     X509Certificate cert;
