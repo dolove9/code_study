@@ -27,4 +27,8 @@ public class SpyTest {
         int solution = spy.solution(null);
         assertEquals(0, solution);
     }
+
+    @Test
+    public void solution() {
+    }
 }

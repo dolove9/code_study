@@ -1,24 +1,22 @@
 package com.programers.chap1;
 
+import com.sun.xml.internal.ws.util.QNameMap;
+
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
 
 public class Spy {
     public int solution(String[][] clothes) {
-        int answer = 1;
-        HashMap<String, Integer> map = new HashMap<>();
-        for(int i=0; i<clothes.length; i++){
-            String key = clothes[i][1];
-            if(!map.containsKey(key)) {
-                map.put(key, 1);
-            } else {
-                map.put(key, map.get(key) + 1);
-            }
+        int answer = 0;
+
+        HashMap<String, String> temp = new HashMap<>();
+        for (int i = 0 ; i < clothes.length; i++){
+            temp.put(clothes[i][0], clothes[i][1]);
         }
-        Iterator<Integer> it = map.values().iterator();
-        while(it.hasNext()) {
-            answer *= it.next().intValue()+1;
-        }
-        return answer-1;
+
+        Collections.frequency(Collections.singleton(temp), "value");
+
+        return answer;
     }
 }

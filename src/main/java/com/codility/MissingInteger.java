@@ -1,7 +1,7 @@
 package com.codility;
 
-    import java.util.HashSet;
-    import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Arrays;
 
 public class MissingInteger {
     public int solution(int[] A){
