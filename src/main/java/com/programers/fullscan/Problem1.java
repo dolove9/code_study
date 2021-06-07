@@ -26,6 +26,7 @@ public class Problem1 {
         OptionalInt max = Arrays.stream(scores).max();
         int maxScore = max.getAsInt();
 
+        /*
         List<Integer> resultList = new ArrayList();
         for(int i = 0 ; i < scores.length ; i++){
             if(scores[i] == maxScore){
@@ -39,7 +40,19 @@ public class Problem1 {
             result[i] = i+1;
         }
         return result;
+         */
+        List<Integer> result = new ArrayList<>();
 
+        if(maxScore == scores[0]) result.add(1);
+        if(maxScore == scores[1]) result.add(2);
+        if(maxScore == scores[2]) result.add(3);
+
+        int [] answer = new int[result.size()];
+        for(int i = 0 ; i < result.size() ; i++){
+            answer[i] = result.get(i);
+        }
+
+        return answer;
 
     }
 }
